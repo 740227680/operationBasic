@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ebaize.mapper.BasicMapper">
+
+    <select id="getListByPageByTableName" resultType="java.util.Map">
+        select
+        *
+        from ${tableName}
+        where 1 = 1
+        <if test="paramsSqlList != null and paramsSqlList.size()> 0">
+            <foreach collection="paramsSqlList" index="index" item="item" open=" AND " close="" separator=" AND ">
+                ${item}
+            </foreach>
+        </if>
+    </select>
+
+</mapper>
+
