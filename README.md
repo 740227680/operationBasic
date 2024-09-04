@@ -14,24 +14,25 @@ operationBasic项目有以下方法：
 ```
 
 需要加的表
-mysql：
+
+Mysql:
 ```sql
 CREATE TABLE `std_table_config` (
   `id` varchar(32) NOT NULL COMMENT '主键id',
-  `table_name` varchar(255) DEFAULT NULL COMMENT '表名',
+  `table_name` varchar(50) DEFAULT NULL COMMENT '表名',
   `query_field` varchar(50) DEFAULT NULL COMMENT '查询字段',
-  `query_name` varchar(255) DEFAULT NULL COMMENT '字段名称',
+  `query_name` varchar(50) DEFAULT NULL COMMENT '字段名称',
   `query_type` varchar(50) DEFAULT NULL COMMENT '字段类型',
   `query_sort` int(10) DEFAULT NULL COMMENT '查询字段排序',
   `valid` varchar(1) DEFAULT NULL COMMENT '有效标识;Y-有效、N-无效',
   `create_time` datetime(6) DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6) COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='std自定义表配置';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='自定义表配置';
 ```
 
 DM:
 ```sql
-CREATE TABLE QYFX_INIT.STD_TABLE_CONFIG
+CREATE TABLE 模式名.STD_TABLE_CONFIG
 (
 "id" VARCHAR(32) NOT NULL,
 "table_name" VARCHAR(50),
@@ -43,13 +44,13 @@ CREATE TABLE QYFX_INIT.STD_TABLE_CONFIG
 "query_name" VARCHAR(255),
 NOT CLUSTER PRIMARY KEY("id")) STORAGE(ON "QYFX_INIT", CLUSTERBTR) ;
 
-COMMENT ON TABLE "QYFX_INIT"."STD_TABLE_CONFIG" IS 'std自定义表配置';
-COMMENT ON COLUMN "QYFX_INIT"."STD_TABLE_CONFIG"."create_time" IS '创建时间';
-COMMENT ON COLUMN "QYFX_INIT"."STD_TABLE_CONFIG"."id" IS '主键id';
-COMMENT ON COLUMN "QYFX_INIT"."STD_TABLE_CONFIG"."query_field" IS '查询字段';
-COMMENT ON COLUMN "QYFX_INIT"."STD_TABLE_CONFIG"."query_name" IS '字段名称';
-COMMENT ON COLUMN "QYFX_INIT"."STD_TABLE_CONFIG"."query_sort" IS '查询字段排序';
-COMMENT ON COLUMN "QYFX_INIT"."STD_TABLE_CONFIG"."query_type" IS '字段类型';
-COMMENT ON COLUMN "QYFX_INIT"."STD_TABLE_CONFIG"."table_name" IS '表名';
-COMMENT ON COLUMN "QYFX_INIT"."STD_TABLE_CONFIG"."valid" IS '有效标识;Y-有效、N-无效';
+COMMENT ON TABLE "模式名"."STD_TABLE_CONFIG" IS '自定义表配置';
+COMMENT ON COLUMN "模式名"."STD_TABLE_CONFIG"."create_time" IS '创建时间';
+COMMENT ON COLUMN "模式名"."STD_TABLE_CONFIG"."id" IS '主键id';
+COMMENT ON COLUMN "模式名"."STD_TABLE_CONFIG"."query_field" IS '查询字段';
+COMMENT ON COLUMN "模式名"."STD_TABLE_CONFIG"."query_name" IS '字段名称';
+COMMENT ON COLUMN "模式名"."STD_TABLE_CONFIG"."query_sort" IS '查询字段排序';
+COMMENT ON COLUMN "模式名"."STD_TABLE_CONFIG"."query_type" IS '字段类型';
+COMMENT ON COLUMN "模式名"."STD_TABLE_CONFIG"."table_name" IS '表名';
+COMMENT ON COLUMN "模式名"."STD_TABLE_CONFIG"."valid" IS '有效标识;Y-有效、N-无效';
 ```
