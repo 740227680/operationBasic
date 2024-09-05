@@ -88,6 +88,9 @@ public class ColumnService {
 
         // 构建SQL语句
         for (Map.Entry<String, Object> entry : updates.entrySet()) {
+            if("id".equals(entry.getKey())){
+                continue;
+            }
             if (query.length() > ("UPDATE " + tableName + " SET ").length()) {
                 query.append(", ");
             }
