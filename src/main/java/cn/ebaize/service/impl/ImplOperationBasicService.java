@@ -1,7 +1,8 @@
 package cn.ebaize.service.impl;
 
 import cn.ebaize.mapper.BasicMapper;
-import cn.ebaize.model.vo.BasicSearchVo;
+import cn.ebaize.model.vo.QueryColumnVo;
+import cn.ebaize.model.vo.TableColumnVo;
 import cn.ebaize.service.ColumnService;
 import cn.ebaize.service.OperationBasicService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -26,12 +27,13 @@ public class ImplOperationBasicService implements OperationBasicService {
     private ColumnService columnService;
 
     @Override
-    public BasicSearchVo getDynamicTableInfo(String tableName) throws SQLException {
-        BasicSearchVo basicSearchVo = new BasicSearchVo();
-        basicSearchVo.setTableName(tableName);
-        basicSearchVo.setQueryColumnVoList(basicMapper.getQueryColumnInfoList(tableName));
-        basicSearchVo.setTableColumnVoList(columnService.getColumnNamesAndComments(tableName));
-        return basicSearchVo;
+    public List<TableColumnVo> getDynamicTableInfo(String tableName) throws SQLException {
+        return columnService.getColumnNamesAndComments(tableName);
+    }
+
+    @Override
+    public List<QueryColumnVo> getDynamicSearchInfo(String tableName) {
+        return basicMapper.getQueryColumnInfoList(tableName);
     }
 
     @Override

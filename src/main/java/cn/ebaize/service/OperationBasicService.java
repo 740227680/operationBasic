@@ -1,6 +1,7 @@
 package cn.ebaize.service;
 
-import cn.ebaize.model.vo.BasicSearchVo;
+import cn.ebaize.model.vo.QueryColumnVo;
+import cn.ebaize.model.vo.TableColumnVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 
 import java.sql.SQLException;
@@ -13,16 +14,25 @@ import java.util.Map;
 public interface OperationBasicService {
 
     /**
-     * Get information about dynamic tables
+     * 动态表的字段信息
      *
      * @param tableName
      * @return
      * @throws SQLException
      */
-    BasicSearchVo getDynamicTableInfo(String tableName) throws SQLException;
+    List<TableColumnVo> getDynamicTableInfo(String tableName) throws SQLException;
 
     /**
-     * Get list of dynamic tables based on parameters
+     * 动态的查询信息
+     *
+     * @param tableName
+     * @return
+     * @throws SQLException
+     */
+    List<QueryColumnVo> getDynamicSearchInfo(String tableName);
+
+    /**
+     * 动态表列表数据(分页)
      *
      * @param current
      * @param size
@@ -33,7 +43,7 @@ public interface OperationBasicService {
     IPage<Map<String, Object>> getListByPage(Integer current, Integer size, String tableName, List<String> paramsSqlList);
 
     /**
-     * Delete data from dynamic table
+     * 动态删除表的数据
      *
      * @param primaryKeyId
      * @param tableName
@@ -41,7 +51,7 @@ public interface OperationBasicService {
     void deleteById(String primaryKeyId, String tableName);
 
     /**
-     * Update the dynamic table
+     * 动态更新表的数据
      *
      * @param primaryKeyId
      * @param tableName
