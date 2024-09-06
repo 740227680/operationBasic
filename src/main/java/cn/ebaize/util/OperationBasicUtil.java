@@ -2,6 +2,7 @@ package cn.ebaize.util;
 
 import cn.ebaize.model.dto.QueryColumnSearch;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,13 +10,13 @@ import java.util.List;
 /**
  * @author: WEI
  */
+@Component
 public class OperationBasicUtil {
 
     /**
-     * 获取动态查询Sql
-     *
-     * @param paramsList
-     * @return
+     *  获取动态查询Sql
+     * @param paramsList 1
+     * @return sql params
      */
     public List<String> transParamsSqlLit(List<QueryColumnSearch> paramsList) {
         List<String> paramsSqlList = new ArrayList<>();
