@@ -44,4 +44,18 @@ public interface BasicMapper {
                                                        @Param("tableName") String tableName,
                                                        @Param("paramsSqlList") List<String> paramsSqlList);
 
+    /**
+     * Query Data from Dynamic Tables
+     *
+     * @param page
+     * @param tableName
+     * @param paramsSqlList
+     * @return
+     */
+    List<Map<String, Object>> getListByPageByTableNameSort(@Param("page") IPage page,
+                                                       @Param("tableName") String tableName,
+                                                       @Param("paramsSqlList") List<String> paramsSqlList,
+                                                       @Param("sortStr") String sortStr
+                                                       );
+
 }

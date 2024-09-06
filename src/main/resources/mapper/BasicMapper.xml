@@ -4,13 +4,30 @@
 
     <select id="getListByPageByTableName" resultType="java.util.Map">
         select
-        *
+            *
         from ${tableName}
-        where 1 = 1
-        <if test="paramsSqlList != null and paramsSqlList.size()> 0">
-            <foreach collection="paramsSqlList" index="index" item="item" open=" AND " close="" separator=" AND ">
-                ${item}
-            </foreach>
+        <where>
+            <if test="paramsSqlList != null and paramsSqlList.size()> 0">
+                <foreach collection="paramsSqlList" index="index" item="item" open=" AND " close="" separator=" AND ">
+                    ${item}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <select id="getListByPageByTableNameSort" resultType="java.util.Map">
+        select
+            *
+        from ${tableName}
+        <where>
+            <if test="paramsSqlList != null and paramsSqlList.size()> 0">
+                <foreach collection="paramsSqlList" index="index" item="item" open=" AND " close="" separator=" AND ">
+                    ${item}
+                </foreach>
+            </if>
+        </where>
+        <if test="sortStr != null and sortStr !=''">
+            #{sortStr}
         </if>
     </select>
 

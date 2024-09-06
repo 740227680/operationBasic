@@ -44,6 +44,13 @@ public class ImplOperationBasicService implements OperationBasicService {
     }
 
     @Override
+    public IPage<Map<String, Object>> getListByPage(Integer current, Integer size, String tableName, List<String> paramsSqlList, String sortStr) {
+        IPage<Map<String, Object>> page = new Page<>(current, size);
+        List<Map<String, Object>> resultList = basicMapper.getListByPageByTableNameSort(page, tableName, paramsSqlList, sortStr);
+        return page.setRecords(resultList);
+    }
+
+    @Override
     public void deleteById(String primaryKeyId, String tableName) {
         basicMapper.delete(primaryKeyId, tableName);
     }

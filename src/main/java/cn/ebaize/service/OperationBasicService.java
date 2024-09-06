@@ -32,7 +32,7 @@ public interface OperationBasicService {
     List<QueryColumnVo> getDynamicSearchInfo(String tableName);
 
     /**
-     * 动态表列表数据(分页)
+     * 动态表列表数据【分页】
      *
      * @param current
      * @param size
@@ -41,6 +41,17 @@ public interface OperationBasicService {
      * @return
      */
     IPage<Map<String, Object>> getListByPage(Integer current, Integer size, String tableName, List<String> paramsSqlList);
+
+    /**
+     * 动态表列表数据【分页、排序】
+     *
+     * @param current
+     * @param size
+     * @param tableName
+     * @param paramsSqlList
+     * @return
+     */
+    IPage<Map<String, Object>> getListByPage(Integer current, Integer size, String tableName, List<String> paramsSqlList, String sortStr);
 
     /**
      * 动态删除表的数据
