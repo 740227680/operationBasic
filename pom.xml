@@ -9,8 +9,8 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>No Bug</name>
-    <description>Bug退散，Buff拉满</description>
+    <name>basic</name>
+    <description>basic</description>
     <url>https://github.com/740227680/operationBasic</url>
 
     <licenses>
