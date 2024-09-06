@@ -14,9 +14,10 @@ import java.util.List;
 public class OperationBasicUtil {
 
     /**
-     *  获取动态查询Sql
-     * @param paramsList 1
-     * @return sql params
+     * 获取动态查询Sql
+     *
+     * @param paramsList
+     * @return
      */
     public List<String> transParamsSqlLit(List<QueryColumnSearch> paramsList) {
         List<String> paramsSqlList = new ArrayList<>();
