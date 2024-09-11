@@ -21,7 +21,7 @@ import java.util.Map;
 public class ImplOperationBasicService implements OperationBasicService {
 
     @Resource
-    private OperationBasicMapper basicMapper;
+    private OperationBasicMapper operationBasicMapper;
 
     @Resource
     private ColumnService columnService;
@@ -33,26 +33,26 @@ public class ImplOperationBasicService implements OperationBasicService {
 
     @Override
     public List<QueryColumnVo> getDynamicSearchInfo(String tableName) {
-        return basicMapper.getQueryColumnInfoList(tableName);
+        return operationBasicMapper.getQueryColumnInfoList(tableName);
     }
 
     @Override
     public IPage<Map<String, Object>> getListByPage(Integer current, Integer size, String tableName, List<String> paramsSqlList) {
         IPage<Map<String, Object>> page = new Page<>(current, size);
-        List<Map<String, Object>> resultList = basicMapper.getListByPageByTableName(page, tableName, paramsSqlList);
+        List<Map<String, Object>> resultList = operationBasicMapper.getListByPageByTableName(page, tableName, paramsSqlList);
         return page.setRecords(resultList);
     }
 
     @Override
     public IPage<Map<String, Object>> getListByPage(Integer current, Integer size, String tableName, List<String> paramsSqlList, String sortStr) {
         IPage<Map<String, Object>> page = new Page<>(current, size);
-        List<Map<String, Object>> resultList = basicMapper.getListByPageByTableNameSort(page, tableName, paramsSqlList, sortStr);
+        List<Map<String, Object>> resultList = operationBasicMapper.getListByPageByTableNameSort(page, tableName, paramsSqlList, sortStr);
         return page.setRecords(resultList);
     }
 
     @Override
     public void deleteById(String primaryKeyId, String tableName) {
-        basicMapper.delete(primaryKeyId, tableName);
+        operationBasicMapper.delete(primaryKeyId, tableName);
     }
 
     @Override
