@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.operationbasic</groupId>
-    <artifactId>example</artifactId>
+    <artifactId>operation-basic</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>No Bug</name>
-    <description>desc</description>
+    <name>basic</name>
+    <description>basic</description>
     <url>https://github.com/740227680/operationBasic</url>
 
     <licenses>
