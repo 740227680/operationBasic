@@ -1,6 +1,6 @@
 package cn.ebaize.service.impl;
 
-import cn.ebaize.mapper.BasicMapper;
+import cn.ebaize.mapper.OperationBasicMapper;
 import cn.ebaize.model.vo.QueryColumnVo;
 import cn.ebaize.model.vo.TableColumnVo;
 import cn.ebaize.service.ColumnService;
@@ -21,7 +21,7 @@ import java.util.Map;
 public class ImplOperationBasicService implements OperationBasicService {
 
     @Resource
-    private BasicMapper basicMapper;
+    private OperationBasicMapper basicMapper;
 
     @Resource
     private ColumnService columnService;

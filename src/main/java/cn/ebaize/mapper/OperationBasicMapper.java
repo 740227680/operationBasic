@@ -3,6 +3,7 @@ package cn.ebaize.mapper;
 import cn.ebaize.model.vo.QueryColumnVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -12,7 +13,8 @@ import java.util.Map;
 /**
  * @author WEI
  */
-public interface BasicMapper {
+@Mapper
+public interface OperationBasicMapper {
 
     /**
      * Get table dynamic query conditions
@@ -50,6 +52,7 @@ public interface BasicMapper {
      * @param page
      * @param tableName
      * @param paramsSqlList
+     * @param sortStr
      * @return
      */
     List<Map<String, Object>> getListByPageByTableNameSort(@Param("page") IPage page,
