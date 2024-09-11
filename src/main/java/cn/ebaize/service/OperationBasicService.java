@@ -49,6 +49,7 @@ public interface OperationBasicService {
      * @param size
      * @param tableName
      * @param paramsSqlList
+     * @param sortStr
      * @return
      */
     IPage<Map<String, Object>> getListByPage(Integer current, Integer size, String tableName, List<String> paramsSqlList, String sortStr);
