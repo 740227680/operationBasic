@@ -1,11 +1,9 @@
 package cn.ebaize.mapper;
 
 import cn.ebaize.model.vo.QueryColumnVo;
+import cn.ebaize.sql.SqlProvider;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 import java.util.Map;
@@ -13,7 +11,6 @@ import java.util.Map;
 /**
  * @author WEI
  */
-@Mapper
 public interface OperationBasicMapper {
 
     /**
@@ -42,23 +39,9 @@ public interface OperationBasicMapper {
      * @param paramsSqlList
      * @return
      */
+    @SelectProvider(type = SqlProvider.class, method = "selectFromTableWithConditions")
     List<Map<String, Object>> getListByPageByTableName(@Param("page") IPage page,
                                                        @Param("tableName") String tableName,
                                                        @Param("paramsSqlList") List<String> paramsSqlList);
-
-    /**
-     * Query Data from Dynamic Tables
-     *
-     * @param page
-     * @param tableName
-     * @param paramsSqlList
-     * @param sortStr
-     * @return
-     */
-    List<Map<String, Object>> getListByPageByTableNameSort(@Param("page") IPage page,
-                                                       @Param("tableName") String tableName,
-                                                       @Param("paramsSqlList") List<String> paramsSqlList,
-                                                       @Param("sortStr") String sortStr
-                                                       );
 
 }

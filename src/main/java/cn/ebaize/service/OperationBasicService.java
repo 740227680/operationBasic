@@ -43,18 +43,6 @@ public interface OperationBasicService {
     IPage<Map<String, Object>> getListByPage(Integer current, Integer size, String tableName, List<String> paramsSqlList);
 
     /**
-     * 动态表列表数据【分页、排序】
-     *
-     * @param current
-     * @param size
-     * @param tableName
-     * @param paramsSqlList
-     * @param sortStr
-     * @return
-     */
-    IPage<Map<String, Object>> getListByPage(Integer current, Integer size, String tableName, List<String> paramsSqlList, String sortStr);
-
-    /**
      * 动态删除表的数据
      *
      * @param primaryKeyId
