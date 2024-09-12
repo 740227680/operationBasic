@@ -6,7 +6,7 @@
 
     <groupId>io.github.operationbasic</groupId>
     <artifactId>operation-basic</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>basic</name>
@@ -94,45 +94,24 @@
             <!-- Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.example.MainClass</mainClass>
-                        </manifest>
-                    </archive>
-                    <includes>
-                        <include>**/*.class</include>
-                    </includes>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <!-- Source -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- Javadoc -->
 <!--            <plugin>-->
 <!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--                <version>2.9.1</version>-->
+<!--                <artifactId>maven-source-plugin</artifactId>-->
+<!--                <version>2.2.1</version>-->
 <!--                <executions>-->
 <!--                    <execution>-->
-<!--                        <id>attach-javadocs</id>-->
+<!--                        <id>attach-sources</id>-->
 <!--                        <goals>-->
-<!--                            <goal>jar</goal>-->
+<!--                            <goal>jar-no-fork</goal>-->
 <!--                        </goals>-->
 <!--                    </execution>-->
 <!--                </executions>-->

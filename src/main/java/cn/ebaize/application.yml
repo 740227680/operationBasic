@@ -1,0 +1,6 @@
+mybatis-plus:
+  mapper-locations: classpath:/mapper/admin/**/*.xml,classpath:/mapper/**/*.xml
+
+spring:
+  application:
+    name: operation
