@@ -50,7 +50,7 @@ public class ImplOperationBasicService implements OperationBasicService {
 
     @Override
     public Boolean updateById(String primaryKeyId, String tableName, Map<String, Object> dataInfo) {
-        return columnService.updateDataByDynamic(tableName, primaryKeyId, dataInfo);
+        return columnService.updateDataByDynamic(primaryKeyId, tableName, dataInfo);
     }
 
 }

@@ -113,6 +113,7 @@ public class ColumnService {
             int rowsUpdated = pstmt.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException e) {
+            System.out.println(e);
             return false;
         } finally {
             // The resources will be automatically closed by try-with-resources
