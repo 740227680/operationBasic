@@ -1,9 +1,12 @@
-package cn.ebaize.mapper;
+package cn.ebaize.dynamic.mapper;
 
-import cn.ebaize.model.vo.QueryColumnVo;
-import cn.ebaize.sql.SqlProvider;
+import cn.ebaize.dynamic.model.vo.QueryColumnVo;
+import cn.ebaize.dynamic.sql.SqlProvider;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
 
 import java.util.List;
 import java.util.Map;
