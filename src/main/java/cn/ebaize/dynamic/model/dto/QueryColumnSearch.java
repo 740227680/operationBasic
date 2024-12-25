@@ -1,4 +1,4 @@
-package cn.ebaize.model.dto;
+package cn.ebaize.dynamic.model.dto;
 
 
 import java.io.Serializable;

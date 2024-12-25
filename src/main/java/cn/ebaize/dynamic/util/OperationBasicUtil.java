@@ -1,6 +1,6 @@
-package cn.ebaize.util;
+package cn.ebaize.dynamic.util;
 
-import cn.ebaize.model.dto.QueryColumnSearch;
+import cn.ebaize.dynamic.model.dto.QueryColumnSearch;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import org.springframework.stereotype.Component;
 

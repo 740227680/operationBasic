@@ -1,7 +1,7 @@
-package cn.ebaize.service;
+package cn.ebaize.dynamic.service;
 
-import cn.ebaize.model.vo.QueryColumnVo;
-import cn.ebaize.model.vo.TableColumnVo;
+import cn.ebaize.dynamic.model.vo.QueryColumnVo;
+import cn.ebaize.dynamic.model.vo.TableColumnVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 
 import java.sql.SQLException;

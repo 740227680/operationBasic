@@ -1,6 +1,6 @@
-package cn.ebaize.service;
+package cn.ebaize.dynamic.service;
 
-import cn.ebaize.model.vo.TableColumnVo;
+import cn.ebaize.dynamic.model.vo.TableColumnVo;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Service;

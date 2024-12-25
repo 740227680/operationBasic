@@ -1,10 +1,10 @@
-package cn.ebaize.service.impl;
+package cn.ebaize.dynamic.service.impl;
 
-import cn.ebaize.mapper.OperationBasicMapper;
-import cn.ebaize.model.vo.QueryColumnVo;
-import cn.ebaize.model.vo.TableColumnVo;
-import cn.ebaize.service.ColumnService;
-import cn.ebaize.service.OperationBasicService;
+import cn.ebaize.dynamic.mapper.OperationBasicMapper;
+import cn.ebaize.dynamic.model.vo.QueryColumnVo;
+import cn.ebaize.dynamic.model.vo.TableColumnVo;
+import cn.ebaize.dynamic.service.ColumnService;
+import cn.ebaize.dynamic.service.OperationBasicService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.stereotype.Service;
